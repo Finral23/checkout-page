@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import OrderInfo from "./components/OrderInfo";
 import PaymentForm from "./components/PaymentForm";
@@ -14,6 +15,7 @@ function App() {
           <PaymentForm />
           <PlanNotice />
           <OrderInfo />
+          <Footer />
         </div>
       </div>
     </>
