@@ -1,20 +1,37 @@
 import { useState } from "react";
 import Cleave from "cleave.js/react";
 import { BsFillInfoCircleFill } from "react-icons/bs";
+import PayButton from "./PayButton";
 
 const PaymentForm = () => {
   const [card, setCard] = useState("");
   const [date, setDate] = useState("");
   const [cvc, setCvc] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (card.length < 19 || date.length !== 5 || cvc.length < 3) {
+    if (isProcessing) return;
+
+    const isValid =
+      card.length === 19 &&
+      /^\d{2}\/\d{2}$/.test(date) &&
+      Number(date.slice(0, 2)) >= 1 &&
+      Number(date.slice(0, 2)) <= 12 &&
+      cvc.length >= 3;
+
+    if (!isValid) {
       alert("❌ Please fill out all fields correctly");
-    } else {
-      alert("✅ Payment simulated successfully");
+      return;
     }
+
+    setIsProcessing(true);
+
+    setTimeout(() => {
+      alert("✅ Payment simulated successfully");
+      setIsProcessing(false);
+    }, 2000);
   };
 
   return (
@@ -28,7 +45,7 @@ const PaymentForm = () => {
         </label>
         <Cleave
           id="card"
-          options={{ creditCard: true }}
+          options={{ blocks: [4, 4, 4, 4], numericOnly: true }}
           value={card}
           onChange={(e) => setCard(e.target.value)}
           className="w-full border border-[var(--color-border)] p-2 rounded focus:outline-none focus:ring-0"
@@ -67,12 +84,9 @@ const PaymentForm = () => {
         </div>
       </div>
 
-      <button
-        type="submit"
-        className="bg-[var(--color-primary)] text-white w-full py-2 rounded"
-      >
-        Start Trial
-      </button>
+      <PayButton isProcessing={isProcessing} onClick={() => {}}>
+        Pay 299.99 UAH
+      </PayButton>
     </form>
   );
 };

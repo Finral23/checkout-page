@@ -8,8 +8,8 @@ import PlanNotice from "./components/PlanNotice";
 function App() {
   return (
     <>
-      <div className="min-h-screen bg-gray-100 flex justify-center items-start p-4">
-        <div className="w-full max-w-md bg-white p-6 rounded-md shadow-md">
+      <div className="min-h-screen flex justify-center items-start ">
+        <div className="w-full max-w-md p-3 rounded-md ">
           <Header />
           <PaymentIntro />
           <PaymentForm />
