@@ -31,7 +31,7 @@ const PaymentForm = () => {
           options={{ creditCard: true }}
           value={card}
           onChange={(e) => setCard(e.target.value)}
-          className="w-full border border-[#E4E6EC] p-2 rounded focus:outline-none focus:ring-0"
+          className="w-full border border-[var(--color-border)] p-2 rounded focus:outline-none focus:ring-0"
         />
       </div>
 
@@ -46,7 +46,7 @@ const PaymentForm = () => {
             placeholder="MM/YY"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="w-full border border-[#E4E6EC] p-2 rounded focus:outline-none focus:ring-0 placeholder:text-sm"
+            className="w-full border border-[var(--color-border)] p-2 rounded focus:outline-none focus:ring-0 placeholder:text-sm"
           />
         </div>
 
@@ -60,7 +60,7 @@ const PaymentForm = () => {
             type="password"
             value={cvc}
             onChange={(e) => setCvc(e.target.value)}
-            className="w-full border border-[#E4E6EC] p-2 rounded focus:outline-none focus:ring-0 placeholder:text-sm pr-8"
+            className="w-full border border-[var(--color-border)] p-2 rounded focus:outline-none focus:ring-0 placeholder:text-sm pr-8"
           />
 
           <BsFillInfoCircleFill className="absolute top-1/2 right-2 text-gray-400 text-xl" />

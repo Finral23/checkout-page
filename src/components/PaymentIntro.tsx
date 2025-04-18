@@ -12,11 +12,11 @@ const PaymentIntro = () => {
       </button>
 
       <div className="flex justify-between items-center gap-4 text-sm mb-4">
-        <div className="bg-[#E4E6EC] w-[100px] h-[1px]" />
+        <div className="bg-[var(--color-border)] w-[100px] h-[1px]" />
         <div className="w-[107px] text-[var(--text-secondary)]">
           or pay with card
         </div>
-        <div className="bg-[#E4E6EC] w-[100px] h-[1px]" />
+        <div className="bg-[var(--color-border)] w-[100px] h-[1px]" />
       </div>
     </div>
   );

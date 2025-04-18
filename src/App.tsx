@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import PaymentForm from "./components/PaymentForm";
 import PaymentIntro from "./components/PaymentIntro";
+import PlanNotice from "./components/PlanNotice";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
           <Header />
           <PaymentIntro />
           <PaymentForm />
+          <PlanNotice />
         </div>
       </div>
     </>
