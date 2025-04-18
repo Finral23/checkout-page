@@ -5,3 +5,7 @@
   --text-secondary: #666c7b;
   --color-border: #e4e6ec;
 }
+
+body {
+  font-family: "Inter";
+}

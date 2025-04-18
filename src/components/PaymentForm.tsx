@@ -85,7 +85,7 @@ const PaymentForm = () => {
       </div>
 
       <PayButton isProcessing={isProcessing} onClick={() => {}}>
-        Pay 299.99 UAH
+        Start Trial
       </PayButton>
     </form>
   );
